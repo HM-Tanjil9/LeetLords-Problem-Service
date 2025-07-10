@@ -1,0 +1,12 @@
+{
+  "name": "leetlords-problem-service",
+  "version": "1.0.0",
+  "description": "This is an admin service to manage problem of the leetlords platform",
+  "license": "ISC",
+  "author": "Tanjil Rahman",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
