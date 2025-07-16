@@ -20,28 +20,33 @@ async function addProblem(req, res, next) {
             message: "Successfully created a problem",
             error: {},
             data: newProblem
-        })
+        });
 
     } catch (error) {
         next(error);
     }
 }
 
-function getProblem(req, res) {
-    try {
-        // Not implemented
-        throw new notImplemented('Get Problem');
-    } catch (error) {
-        next(error);
-    }
-}
-
-
-
-function getProblems(req, res) {
+async function getProblem(req, res) {
     try {
         // Not implemented
         throw new notImplemented('Get all problems');
+    } catch (error) {
+        next(error);
+    }
+}
+
+
+
+async function getProblems(req, res) {
+    try {
+        const problems = await problemService.getAllProblems();
+        return res.status(StatusCodes.OK).json({
+            success: true,
+            message: "Successfully fetched all problems",
+            error: {},
+            data: problems
+        });
     } catch (error) {
         next(error);
     }
