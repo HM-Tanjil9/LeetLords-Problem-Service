@@ -16,8 +16,8 @@ class ProblemService {
     }
 
     async getAllProblems() {
-        const problems = await this.ProblemRepository.getAllProblems();
-        return problems;
+        const response = await this.ProblemRepository.getAllProblems();
+        return response;
     }
 
     async getProblemById(problemId) {
@@ -27,6 +27,11 @@ class ProblemService {
 
     async deleteProblem(problemId) {
         const response = await this.ProblemRepository.deleteProblem(problemId);
+        return response;
+    }
+
+    async updateProblem(problemId, newData) {
+        const response = await this.ProblemRepository.updateProblem(problemId, newData);
         return response;
     }
 }
