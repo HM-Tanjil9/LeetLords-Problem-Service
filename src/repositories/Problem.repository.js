@@ -55,9 +55,7 @@ class ProblemRepository {
 
     async updateProblem(id, data) {
         try {
-            console.log('repo:', id, data);
-            
-            const updateProblem = await ProblemModel.findByIdAndUpdate(id, data, {new: true});
+            const updateProblem = await ProblemModel.findByIdAndUpdate(id, data, {new: true, runValidators: true});
             if(!updateProblem) {
                 throw new NotFound("Problem", id);
             }
